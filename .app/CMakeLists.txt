@@ -101,6 +101,8 @@ add_subdirectory("libraries/boost")
 # Build Skyline with full debugging data and -Og for debug builds
 set(CMAKE_CXX_FLAGS_DEBUG "-O0 -g3 -glldb -gdwarf-5")
 
+file(COPY ${CMAKE_CURRENT_SOURCE_DIR}/copy_files/ DESTINATION ${CMAKE_BINARY_DIR}/private_directory/)
+
 # Skyline
 add_library(skyline SHARED
         ${source_DIR}/emu_jni.cpp
